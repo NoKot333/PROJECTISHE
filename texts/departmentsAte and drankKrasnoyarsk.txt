@@ -1,0 +1,4 @@
+﻿{
+"На проспекте 'свободном '":"On Svobodny Avenue",
+"В центре":"In the center"
+}

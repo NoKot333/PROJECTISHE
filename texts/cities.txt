@@ -1,0 +1,6 @@
+﻿{
+"Красноярск":"Krasnoyarsk",
+"Москва":"Moscow",
+"Санкт-Петербург":"Saint-Petersburg",
+"Нью-Йорк":"New-York"
+}

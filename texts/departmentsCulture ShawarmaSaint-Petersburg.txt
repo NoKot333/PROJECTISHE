@@ -1,0 +1,4 @@
+﻿{
+"В центральном районе":"In the central district",
+"На острове":"On the Island"
+}

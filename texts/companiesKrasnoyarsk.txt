@@ -1,0 +1,4 @@
+﻿{
+"ПОел ПОпил":"Ate and drank",
+"Сибирский Федеральный Университет":"Siberian Federal University",
+}

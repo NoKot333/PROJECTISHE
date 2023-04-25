@@ -1,0 +1,12 @@
+﻿{
+"Директор" : "Director",
+"Уборщик" : "Clean Master",
+"Старший Инженер" : "Senior Engineer",
+"Младший Инженер" : "Junior Engineer",
+"Бухгалтер" : "Accountant",
+"Повар" : "Chef",
+"Охранник" : "Guard",
+"Ассистент" : "Assistant",
+"Курьер":"Courier",
+"Администратор" : "Administrator"
+}

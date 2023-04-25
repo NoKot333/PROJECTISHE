@@ -1,0 +1,4 @@
+﻿{
+"Шишки и Смородина":"Cones and Currants",
+"Яйца Рябы":"Ryaba Eggs"
+}

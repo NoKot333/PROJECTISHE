@@ -1,0 +1,4 @@
+﻿{
+"В лесу 'Дремучий'":"In the forest 'Dense'",
+"У реки 'Родная'":"By the river 'Native'"
+}
