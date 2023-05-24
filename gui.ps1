@@ -16,6 +16,7 @@ $BlockUserBtn.location          = New-Object System.Drawing.Point(10,10)
 $BlockUserBtn.Font              = 'Microsoft Sans Serif,10'
 $BlockUserBtn.ForeColor         = "#ffffff"
 
+
 $UnbanUserBtn = New-Object system.Windows.Forms.Button
 $UnbanUserBtn.BackColor         = "#a4ba67"
 $UnbanUserBtn.text              = "Разблокировать пользователя"
@@ -173,15 +174,15 @@ function UnBanUserFunc {
                 if ( ($userInfo  | Select-Object -expand Enabled) -eq $false) {
                     if([System.Windows.MessageBox]::Show('Точно?', 'Уверены?', 'YesNo','Question') -eq 'Yes'){
                         try {Enable-ADAccount -identity $UserLogin.Text
-                            [System.Windows.MessageBox]::Show("Пользователь заблокирован")}
-                        catch {[System.Windows.MessageBox]::Show("Произошла неизвестная ошибка")} }
-                    else {[System.Windows.MessageBox]::Show("Разблокировка отменена")}
+                            [System.Windows.MessageBox]::Show("Пользователь разблокирован","Готово","OK","Information")}
+                        catch {[System.Windows.MessageBox]::Show("Произошла неизвестная ошибка","Ошибка","OK","Error")} }
+                    else {[System.Windows.MessageBox]::Show("Разблокировка отменена","Отмена","OK","Information")}
             } else {
-            [System.Windows.MessageBox]::Show("Этот пользователь уже разблокирован")
+            [System.Windows.MessageBox]::Show("Этот пользователь уже разблокирован","Ошибка","OK","Error")
             }
       } 
             else {
-        [System.Windows.MessageBox]::Show("Невозможно найти пользователя $UserLogin.Text")
+        [System.Windows.MessageBox]::Show("Невозможно найти пользователя $($UserLogin.Text)","Ошибка","OK","Error")
            }
     }
     $CurrForm                    = New-Object system.Windows.Forms.Form
@@ -592,8 +593,14 @@ function GetGroupInfoFunc {
     function CheckUser     {
         $groupInfo = Get-ADGroup -identity $GroupLogin.Text -ErrorAction ignore
             if ( $null -ne $groupInfo ) {
-            $info = Get-ADGroup -identity $GroupID  | select-object SamAccountName,DistinguishedName,GroupCategory,GroupScope
-            $info = $info + "\n" + "Members = $(Get-ADGroupMember LazyPeople | Select-Object -expand Name)"
+            $info = "
+            Name: $($groupInfo  | select -expand SamAccountName) 
+            Container: $($groupInfo  | select -expand DistinguishedName)  
+            Type: $($groupInfo  | select -expand GroupCategory)  
+            Group Scope: $($groupInfo  | select -expand GroupScope)"
+            $members = "
+            Members: " + (Get-ADGroupMember $GroupLogin.Text | Select-Object -expand Name)
+            $info =  $info + $members
     [System.Windows.MessageBox]::Show($info)
   }
   else {
@@ -629,7 +636,7 @@ function GetGroupInfoFunc {
 
     $Submit.Add_Click({ CheckUser })
 
-    $CurrForm.Controls.AddRange(@($LabelG,$UserLogin,$Submit))
+    $CurrForm.Controls.AddRange(@($LabelG,$GroupLogin,$Submit))
 
     [void]$CurrForm.ShowDialog()
 }

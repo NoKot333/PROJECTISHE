@@ -160,7 +160,7 @@ function GetGroupInfo {
   $GroupID = Read-Host "Введите SamAccountName группы"
   if ( $null -ne (Get-ADGroup -identity $GroupID -ErrorAction SilentlyContinue) ) {
     Get-ADGroup -identity $GroupID  | select-object SamAccountName,DistinguishedName,GroupCategory,GroupScope
-    "Members = $(Get-ADGroupMember LazyPeople | Select-Object -expand Name)"
+    "Members = $(Get-ADGroupMember $GroupID | Select-Object -expand Name)"
   }
   else {
     Write-Host "Невозможно найти группу '$GroupID'"
