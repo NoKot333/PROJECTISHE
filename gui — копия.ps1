@@ -146,7 +146,9 @@ function BlockUserFunc {
     $LabelL.location                  = New-Object System.Drawing.Point(10,10)
     $LabelL.Font                      = 'Microsoft Sans Serif,13'
     
-    $UserLogin = New-Object System.Windows.Forms.TextBox
+    $UserLogin = New-Object System.Windows.Forms.ComboBox
+    $users = Get-ADUser -Filter * | Select -ExpandProperty "Name"
+    $UserLogin.Items.AddRange($users)
     $UserLogin.Width = 400
     $UserLogin.Height = 30
     $UserLogin.location = New-Object System.Drawing.Point(10,45)
@@ -197,7 +199,9 @@ function UnBanUserFunc {
     $LabelL.location                  = New-Object System.Drawing.Point(10,10)
     $LabelL.Font                      = 'Microsoft Sans Serif,13'
 
-    $UserLogin = New-Object System.Windows.Forms.TextBox
+    $UserLogin = New-Object System.Windows.Forms.ComboBox
+    $users = Get-ADUser -Filter * | Select -ExpandProperty "Name"
+    $UserLogin.Items.AddRange($users)
     $UserLogin.Width = 400
     $UserLogin.Height = 30
     $UserLogin.location = New-Object System.Drawing.Point(10,45)
@@ -244,7 +248,9 @@ function ShowMailBoxFunc {
     $LabelL.location                  = New-Object System.Drawing.Point(10,10)
     $LabelL.Font                      = 'Microsoft Sans Serif,13'
 
-    $UserLogin = New-Object System.Windows.Forms.TextBox
+    $UserLogin = New-Object System.Windows.Forms.ComboBox
+    $users = Get-ADUser -Filter * | Select -ExpandProperty "Name"
+    $UserLogin.Items.AddRange($users)
     $UserLogin.Width = 400
     $UserLogin.Height = 30
     $UserLogin.location = New-Object System.Drawing.Point(10,45)
@@ -290,7 +296,9 @@ function HideMailBoxFunc {
     $LabelL.location                  = New-Object System.Drawing.Point(10,10)
     $LabelL.Font                      = 'Microsoft Sans Serif,13'
 
-    $UserLogin = New-Object System.Windows.Forms.TextBox
+    $UserLogin = New-Object System.Windows.Forms.ComboBox
+    $users = Get-ADUser -Filter * | Select -ExpandProperty "Name"
+    $UserLogin.Items.AddRange($users)
     $UserLogin.Width = 400
     $UserLogin.Height = 30
     $UserLogin.location = New-Object System.Drawing.Point(10,10)
@@ -339,7 +347,9 @@ function ChangePasswFunc {
     $LabelL.location                  = New-Object System.Drawing.Point(10,10)
     $LabelL.Font                      = 'Microsoft Sans Serif,13'
     
-    $UserLogin = New-Object System.Windows.Forms.TextBox
+    $UserLogin = New-Object System.Windows.Forms.ComboBox
+    $users = Get-ADUser -Filter * | Select -ExpandProperty "Name"
+    $UserLogin.Items.AddRange($users)
     $UserLogin.Width = 400
     $UserLogin.Height = 30
     $UserLogin.location = New-Object System.Drawing.Point(10,45)
@@ -432,7 +442,9 @@ function AddToGroupFunc {
     $LabelL.location                  = New-Object System.Drawing.Point(10,10)
     $LabelL.Font                      = 'Microsoft Sans Serif,13'
 
-    $UserLogin = New-Object System.Windows.Forms.TextBox
+    $UserLogin = New-Object System.Windows.Forms.ComboBox
+    $users = Get-ADUser -Filter * | Select -ExpandProperty "Name"
+    $UserLogin.Items.AddRange($users)
     $UserLogin.Width = 400
     $UserLogin.Height = 30
     $UserLogin.location = New-Object System.Drawing.Point(10,45)
@@ -446,7 +458,9 @@ function AddToGroupFunc {
     $LabelG.location                  = New-Object System.Drawing.Point(10,80)
     $LabelG.Font                      = 'Microsoft Sans Serif,13'
 
-    $GroupLogin = New-Object System.Windows.Forms.TextBox
+    $GroupLogin = New-Object System.Windows.Forms.ComboBox
+    $groups = Get-ADGroup -Filter * | Select -ExpandProperty "Name"
+    $GroupLogin.Items.AddRange($groups)
     $GroupLogin.Width = 400
     $GroupLogin.Height = 30
     $GroupLogin.location = New-Object System.Drawing.Point(10,115)
@@ -510,7 +524,9 @@ function RemoveFromGroupFunc {
     $LabelL.location                  = New-Object System.Drawing.Point(10,10)
     $LabelL.Font                      = 'Microsoft Sans Serif,13'
 
-    $UserLogin = New-Object System.Windows.Forms.TextBox
+    $UserLogin = New-Object System.Windows.Forms.ComboBox
+    $users = Get-ADUser -Filter * | Select -ExpandProperty "Name"
+    $UserLogin.Items.AddRange($users)
     $UserLogin.Width = 400
     $UserLogin.Height = 30
     $UserLogin.location = New-Object System.Drawing.Point(10,45)
@@ -524,7 +540,9 @@ function RemoveFromGroupFunc {
     $LabelG.location                  = New-Object System.Drawing.Point(10,80)
     $LabelG.Font                      = 'Microsoft Sans Serif,13'
 
-    $GroupLogin = New-Object System.Windows.Forms.TextBox
+    $GroupLogin = New-Object System.Windows.Forms.ComboBox
+    $groups = Get-ADGroup -Filter * | Select -ExpandProperty "Name"
+    $GroupLogin.Items.AddRange($groups)
     $GroupLogin.Width = 400
     $GroupLogin.Height = 30
     $GroupLogin.location = New-Object System.Drawing.Point(10,115)
@@ -568,11 +586,16 @@ function GetUserInfoFunc {
     $LabelL.location                  = New-Object System.Drawing.Point(10,10)
     $LabelL.Font                      = 'Microsoft Sans Serif,13'
 
-    $UserLogin = New-Object System.Windows.Forms.TextBox
+    
+
+    $UserLogin = New-Object System.Windows.Forms.ComboBox
+    $users = Get-ADUser -Filter * | Select -ExpandProperty "Name"
+    $UserLogin.Items.AddRange($users)
     $UserLogin.Width = 400
     $UserLogin.Height = 30
     $UserLogin.location = New-Object System.Drawing.Point(10,45)
     $UserLogin.Font = 'Microsoft Sans Serif,10'
+    
 
     $Submit = New-Object system.Windows.Forms.Button
     $Submit.BackColor         = "#a4ba67"
@@ -599,7 +622,7 @@ function GetGroupInfoFunc {
             Type: $($groupInfo  | select -expand GroupCategory)  
             Group Scope: $($groupInfo  | select -expand GroupScope)"
             $members = "
-            Members: " + (Get-ADGroupMember $GroupLogin.Text | Select-Object -expand Name)
+            Members: " + (Get-ADGroupMember $GroupLogin.Text | Select-Object Name| ConvertTo-Csv -NoTypeInformation | Select-Object -Skip 1)
             $info =  $info + $members
     [System.Windows.MessageBox]::Show($info)
   }
@@ -619,11 +642,14 @@ function GetGroupInfoFunc {
     $LabelG.location                  = New-Object System.Drawing.Point(10,10)
     $LabelG.Font                      = 'Microsoft Sans Serif,13'
 
-    $GroupLogin = New-Object System.Windows.Forms.TextBox
+    $GroupLogin = New-Object System.Windows.Forms.ComboBox
+    $groups = Get-ADGroup -Filter * | Select -ExpandProperty "Name"
+    $GroupLogin.Items.AddRange($groups)
     $GroupLogin.Width = 400
     $GroupLogin.Height = 30
     $GroupLogin.location = New-Object System.Drawing.Point(10,45)
     $GroupLogin.Font = 'Microsoft Sans Serif,10'
+    
 
     $Submit = New-Object system.Windows.Forms.Button
     $Submit.BackColor         = "#a4ba67"
@@ -999,7 +1025,9 @@ function AddToDBFunc {
     $LabelL.location                  = New-Object System.Drawing.Point(10,10)
     $LabelL.Font                      = 'Microsoft Sans Serif,13'
     
-    $UserLogin = New-Object System.Windows.Forms.TextBox
+    $UserLogin = New-Object System.Windows.Forms.ComboBox
+    $users = Get-ADUser -Filter * | Select -ExpandProperty "Name"
+    $UserLogin.Items.AddRange($users)
     $UserLogin.Width = 400
     $UserLogin.Height = 30
     $UserLogin.location = New-Object System.Drawing.Point(10,45)
