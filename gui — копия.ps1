@@ -3,118 +3,127 @@ Add-Type -AssemblyName PresentationFramework
 
 $StartForm                    = New-Object system.Windows.Forms.Form
 
-$StartForm.ClientSize         = '420,420'
-$StartForm.text               = "LazyAdminHelperCenter"
+$StartForm.ClientSize         = '420,430'
+$StartForm.text               = "AdminHelperCenter"
 $StartForm.BackColor          = "#ffffff"
 
 $BlockUserBtn = New-Object system.Windows.Forms.Button
-$BlockUserBtn.BackColor         = "#a4ba67"
+$BlockUserBtn.BackColor         = "#DCDCDC"
 $BlockUserBtn.text              = "Заблокировать пользователя"
 $BlockUserBtn.width             = 400
 $BlockUserBtn.height            = 30
 $BlockUserBtn.location          = New-Object System.Drawing.Point(10,10)
 $BlockUserBtn.Font              = 'Microsoft Sans Serif,10'
-$BlockUserBtn.ForeColor         = "#ffffff"
+$BlockUserBtn.ForeColor         = "#000000"
 
 
 $UnbanUserBtn = New-Object system.Windows.Forms.Button
-$UnbanUserBtn.BackColor         = "#a4ba67"
+$UnbanUserBtn.BackColor         = "#DCDCDC"
 $UnbanUserBtn.text              = "Разблокировать пользователя"
 $UnbanUserBtn.width             = 400
 $UnbanUserBtn.height            = 30
 $UnbanUserBtn.location          = New-Object System.Drawing.Point(10,45)
 $UnbanUserBtn.Font              = 'Microsoft Sans Serif,10'
-$UnbanUserBtn.ForeColor         = "#ffffff"
+$UnbanUserBtn.ForeColor         = "#000000"
 
 $ShowMailBoxBtn = New-Object system.Windows.Forms.Button
-$ShowMailBoxBtn.BackColor         = "#a4ba67"
+$ShowMailBoxBtn.BackColor         = "#DCDCDC"
 $ShowMailBoxBtn.text              = "Показать почтовый ящик"
 $ShowMailBoxBtn.width             = 400
 $ShowMailBoxBtn.height            = 30
 $ShowMailBoxBtn.location          = New-Object System.Drawing.Point(10,80)
 $ShowMailBoxBtn.Font              = 'Microsoft Sans Serif,10'
-$ShowMailBoxBtn.ForeColor         = "#ffffff"
+$ShowMailBoxBtn.ForeColor         = "#000000"
 
 $HideMailBoxBtn = New-Object system.Windows.Forms.Button
-$HideMailBoxBtn.BackColor         = "#a4ba67"
+$HideMailBoxBtn.BackColor         = "#DCDCDC"
 $HideMailBoxBtn.text              = "Скрыть почтовый ящик"
 $HideMailBoxBtn.width             = 400
 $HideMailBoxBtn.height            = 30
 $HideMailBoxBtn.location          = New-Object System.Drawing.Point(10,115)
 $HideMailBoxBtn.Font              = 'Microsoft Sans Serif,10'
-$HideMailBoxBtn.ForeColor         = "#ffffff"
+$HideMailBoxBtn.ForeColor         = "#000000"
 
 $ChangePasswBtn = New-Object system.Windows.Forms.Button
-$ChangePasswBtn.BackColor         = "#a4ba67"
+$ChangePasswBtn.BackColor         = "#DCDCDC"
 $ChangePasswBtn.text              = "Сменить пароль"
 $ChangePasswBtn.width             = 400
 $ChangePasswBtn.height            = 30
 $ChangePasswBtn.location          = New-Object System.Drawing.Point(10,150)
 $ChangePasswBtn.Font              = 'Microsoft Sans Serif,10'
-$ChangePasswBtn.ForeColor         = "#ffffff"
+$ChangePasswBtn.ForeColor         = "#000000"
 
 $AddToGroupBtn = New-Object system.Windows.Forms.Button
-$AddToGroupBtn.BackColor         = "#a4ba67"
+$AddToGroupBtn.BackColor         = "#DCDCDC"
 $AddToGroupBtn.text              = "Добавить к группе"
 $AddToGroupBtn.width             = 400
 $AddToGroupBtn.height            = 30
 $AddToGroupBtn.location          = New-Object System.Drawing.Point(10,185)
 $AddToGroupBtn.Font              = 'Microsoft Sans Serif,10'
-$AddToGroupBtn.ForeColor         = "#ffffff"
+$AddToGroupBtn.ForeColor         = "#000000"
 
 $RemoveFromGroupBtn = New-Object system.Windows.Forms.Button
-$RemoveFromGroupBtn.BackColor         = "#a4ba67"
+$RemoveFromGroupBtn.BackColor         = "#DCDCDC"
 $RemoveFromGroupBtn.text              = "Исключить из группы"
 $RemoveFromGroupBtn.width             = 400
 $RemoveFromGroupBtn.height            = 30
 $RemoveFromGroupBtn.location          = New-Object System.Drawing.Point(10,220)
 $RemoveFromGroupBtn.Font              = 'Microsoft Sans Serif,10'
-$RemoveFromGroupBtn.ForeColor         = "#ffffff"
+$RemoveFromGroupBtn.ForeColor         = "#000000"
 
 $GetUserInfoBtn = New-Object system.Windows.Forms.Button
-$GetUserInfoBtn.BackColor         = "#a4ba67"
+$GetUserInfoBtn.BackColor         = "#DCDCDC"
 $GetUserInfoBtn.text              = "Получить информацию о пользователе"
 $GetUserInfoBtn.width             = 400
 $GetUserInfoBtn.height            = 30
 $GetUserInfoBtn.location          = New-Object System.Drawing.Point(10,255)
 $GetUserInfoBtn.Font              = 'Microsoft Sans Serif,10'
-$GetUserInfoBtn.ForeColor         = "#ffffff"
+$GetUserInfoBtn.ForeColor         = "#000000"
 
 $GetGroupInfoBtn = New-Object system.Windows.Forms.Button
-$GetGroupInfoBtn.BackColor         = "#a4ba67"
+$GetGroupInfoBtn.BackColor         = "#DCDCDC"
 $GetGroupInfoBtn.text              = "Получить информацию о группе"
 $GetGroupInfoBtn.width             = 400
 $GetGroupInfoBtn.height            = 30
 $GetGroupInfoBtn.location          = New-Object System.Drawing.Point(10,290)
 $GetGroupInfoBtn.Font              = 'Microsoft Sans Serif,10'
-$GetGroupInfoBtn.ForeColor         = "#ffffff"
+$GetGroupInfoBtn.ForeColor         = "#000000"
 
 $CreateUserBtn = New-Object system.Windows.Forms.Button
-$CreateUserBtn.BackColor         = "#a4ba67"
+$CreateUserBtn.BackColor         = "#DCDCDC"
 $CreateUserBtn.text              = "Создать нового пользователя"
 $CreateUserBtn.width             = 400
 $CreateUserBtn.height            = 30
 $CreateUserBtn.location          = New-Object System.Drawing.Point(10,325)
 $CreateUserBtn.Font              = 'Microsoft Sans Serif,10'
-$CreateUserBtn.ForeColor         = "#ffffff"
+$CreateUserBtn.ForeColor         = "#000000"
 
 $ConnectToDBBtn = New-Object system.Windows.Forms.Button
-$ConnectToDBBtn.BackColor         = "#a4ba67"
+$ConnectToDBBtn.BackColor         = "#DCDCDC"
 $ConnectToDBBtn.text              = "Подключиться к Microsoft Exchange"
 $ConnectToDBBtn.width             = 400
 $ConnectToDBBtn.height            = 30
 $ConnectToDBBtn.location          = New-Object System.Drawing.Point(10,360)
 $ConnectToDBBtn.Font              = 'Microsoft Sans Serif,10'
-$ConnectToDBBtn.ForeColor         = "#ffffff"
+$ConnectToDBBtn.ForeColor         = "#000000"
 
 $AddToDBBtn = New-Object system.Windows.Forms.Button
-$AddToDBBtn.BackColor         = "#a4ba67"
+$AddToDBBtn.BackColor         = "#DCDCDC"
 $AddToDBBtn.text              = "Добавить пользователя к почтовой БД"
 $AddToDBBtn.width             = 400
 $AddToDBBtn.height            = 30
 $AddToDBBtn.location          = New-Object System.Drawing.Point(10,360)
 $AddToDBBtn.Font              = 'Microsoft Sans Serif,10'
-$AddToDBBtn.ForeColor         = "#ffffff"
+$AddToDBBtn.ForeColor         = "#000000"
+
+$DisconnectFromDBBtn = New-Object system.Windows.Forms.Button
+$DisconnectFromDBBtn.BackColor         = "#DCDCDC"
+$DisconnectFromDBBtn.text              = "Отключиться от Microsoft Exchange"
+$DisconnectFromDBBtn.width             = 400
+$DisconnectFromDBBtn.height            = 30
+$DisconnectFromDBBtn.location          = New-Object System.Drawing.Point(10,395)
+$DisconnectFromDBBtn.Font              = 'Microsoft Sans Serif,10'
+$DisconnectFromDBBtn.ForeColor         = "#000000"
 
 function BlockUserFunc { 
     function CheckUser     {
@@ -155,13 +164,13 @@ function BlockUserFunc {
     $UserLogin.Font = 'Microsoft Sans Serif,10'
 
     $Submit = New-Object system.Windows.Forms.Button
-    $Submit.BackColor         = "#a4ba67"
+    $Submit.BackColor         = "#DCDCDC"
     $Submit.text              = "Заблокировать пользователя"
     $Submit.width             = 300
     $Submit.height            = 30
     $Submit.location          = New-Object System.Drawing.Point(10,80)
     $Submit.Font              = 'Microsoft Sans Serif,10'
-    $Submit.ForeColor         = "#ffffff"
+    $Submit.ForeColor         = "#000000"
 
     $Submit.Add_Click({ CheckUser })
 
@@ -208,13 +217,13 @@ function UnBanUserFunc {
     $UserLogin.Font = 'Microsoft Sans Serif,10'
 
     $Submit = New-Object system.Windows.Forms.Button
-    $Submit.BackColor         = "#a4ba67"
+    $Submit.BackColor         = "#DCDCDC"
     $Submit.text              = "Разблокировать пользователя"
     $Submit.width             = 300
     $Submit.height            = 30
     $Submit.location          = New-Object System.Drawing.Point(10,80)
     $Submit.Font              = 'Microsoft Sans Serif,10'
-    $Submit.ForeColor         = "#ffffff"
+    $Submit.ForeColor         = "#000000"
 
     $Submit.Add_Click({ CheckUser })
 
@@ -229,7 +238,7 @@ function ShowMailBoxFunc {
         if ($null -ne $userInfo ) {
             if([System.Windows.MessageBox]::Show('Точно?', 'Уверены?', 'YesNo','Question') -eq 'Yes'){
                 Set-ADUser -Identity $UserLogin.Text -replace @{msExchHideFromAddressLists=$false}
-                [System.Windows.MessageBox]::Show("Ящик показан в адресной книге","Готово","OK","Information")
+                [System.Windows.MessageBox]::Show("Ящик показывается в списке адресов","Готово","OK","Information")
                 } else {
                 [System.Windows.MessageBox]::Show("Произошла отмена","Отмена","OK","Information")
       }} else {
@@ -257,13 +266,13 @@ function ShowMailBoxFunc {
     $UserLogin.Font = 'Microsoft Sans Serif,10'
 
     $Submit = New-Object system.Windows.Forms.Button
-    $Submit.BackColor         = "#a4ba67"
+    $Submit.BackColor         = "#DCDCDC"
     $Submit.text              = "Сделать ящик видимым"
     $Submit.width             = 300
     $Submit.height            = 30
     $Submit.location          = New-Object System.Drawing.Point(10,80)
     $Submit.Font              = 'Microsoft Sans Serif,10'
-    $Submit.ForeColor         = "#ffffff"
+    $Submit.ForeColor         = "#000000"
 
     $Submit.Add_Click({ CheckUser })
 
@@ -277,7 +286,7 @@ function HideMailBoxFunc {
         if ($null -ne $userInfo ) {
             if([System.Windows.MessageBox]::Show('Точно?', 'Уверены?', 'YesNo','Question') -eq 'Yes'){
                 Set-ADUser -Identity $UserLogin.Text -replace @{msExchHideFromAddressLists=$true}
-                [System.Windows.MessageBox]::Show("Ящик показан в адресной книге","Готово","OK","Information")
+                [System.Windows.MessageBox]::Show("Ящик не показывается в списке адресов","Готово","OK","Information")
                 } else {
                 [System.Windows.MessageBox]::Show("Произошла отмена","Отмена","OK","Information")
       }} else {
@@ -305,13 +314,13 @@ function HideMailBoxFunc {
     $UserLogin.Font = 'Microsoft Sans Serif,10'
 
     $Submit = New-Object system.Windows.Forms.Button
-    $Submit.BackColor         = "#a4ba67"
+    $Submit.BackColor         = "#DCDCDC"
     $Submit.text              = "Скрыть ящик"
     $Submit.width             = 300
     $Submit.height            = 30
     $Submit.location          = New-Object System.Drawing.Point(10,45)
     $Submit.Font              = 'Microsoft Sans Serif,10'
-    $Submit.ForeColor         = "#ffffff"
+    $Submit.ForeColor         = "#000000"
 
     $Submit.Add_Click({ CheckUser })
 
@@ -384,13 +393,13 @@ function ChangePasswFunc {
     $SNewPassw.Font = 'Microsoft Sans Serif,10'
 
     $Submit = New-Object system.Windows.Forms.Button
-    $Submit.BackColor         = "#a4ba67"
+    $Submit.BackColor         = "#DCDCDC"
     $Submit.text              = "Сменить пароль пользователя"
     $Submit.width             = 300
     $Submit.height            = 30
     $Submit.location          = New-Object System.Drawing.Point(10,220)
     $Submit.Font              = 'Microsoft Sans Serif,10'
-    $Submit.ForeColor         = "#ffffff"
+    $Submit.ForeColor         = "#000000"
 
     $Submit.Add_Click({ CheckUser })
 
@@ -467,13 +476,13 @@ function AddToGroupFunc {
     $GroupLogin.Font = 'Microsoft Sans Serif,10'
 
     $Submit = New-Object system.Windows.Forms.Button
-    $Submit.BackColor         = "#a4ba67"
+    $Submit.BackColor         = "#DCDCDC"
     $Submit.text              = "Добавить"
     $Submit.width             = 300
     $Submit.height            = 30
     $Submit.location          = New-Object System.Drawing.Point(10,150)
     $Submit.Font              = 'Microsoft Sans Serif,10'
-    $Submit.ForeColor         = "#ffffff"
+    $Submit.ForeColor         = "#000000"
 
     $Submit.Add_Click({ CheckUser })
 
@@ -549,13 +558,13 @@ function RemoveFromGroupFunc {
     $GroupLogin.Font = 'Microsoft Sans Serif,10'
 
     $Submit = New-Object system.Windows.Forms.Button
-    $Submit.BackColor         = "#a4ba67"
+    $Submit.BackColor         = "#DCDCDC"
     $Submit.text              = "Исключить"
     $Submit.width             = 300
     $Submit.height            = 30
     $Submit.location          = New-Object System.Drawing.Point(10,150)
     $Submit.Font              = 'Microsoft Sans Serif,10'
-    $Submit.ForeColor         = "#ffffff"
+    $Submit.ForeColor         = "#000000"
 
     $Submit.Add_Click({ CheckUser })
 
@@ -598,13 +607,13 @@ function GetUserInfoFunc {
     
 
     $Submit = New-Object system.Windows.Forms.Button
-    $Submit.BackColor         = "#a4ba67"
+    $Submit.BackColor         = "#DCDCDC"
     $Submit.text              = "Получить информацию"
     $Submit.width             = 300
     $Submit.height            = 30
     $Submit.location          = New-Object System.Drawing.Point(10,80)
     $Submit.Font              = 'Microsoft Sans Serif,10'
-    $Submit.ForeColor         = "#ffffff"
+    $Submit.ForeColor         = "#000000"
 
     $Submit.Add_Click({ CheckUser })
 
@@ -652,13 +661,13 @@ function GetGroupInfoFunc {
     
 
     $Submit = New-Object system.Windows.Forms.Button
-    $Submit.BackColor         = "#a4ba67"
+    $Submit.BackColor         = "#DCDCDC"
     $Submit.text              = "Получить информацию"
     $Submit.width             = 300
     $Submit.height            = 30
     $Submit.location          = New-Object System.Drawing.Point(10,80)
     $Submit.Font              = 'Microsoft Sans Serif,10'
-    $Submit.ForeColor         = "#ffffff"
+    $Submit.ForeColor         = "#000000"
 
     $Submit.Add_Click({ CheckUser })
 
@@ -876,13 +885,13 @@ function CreateUserFunc {
     $AppointmentBox.Items.AddRange($Appointment)
 
     $Submit = New-Object system.Windows.Forms.Button
-    $Submit.BackColor         = "#a4ba67"
+    $Submit.BackColor         = "#DCDCDC"
     $Submit.text              = "Создать пользователя"
     $Submit.width             = 300
     $Submit.height            = 30
     $Submit.location          = New-Object System.Drawing.Point(10,465)
     $Submit.Font              = 'Microsoft Sans Serif,10'
-    $Submit.ForeColor         = "#ffffff"
+    $Submit.ForeColor         = "#000000"
 
     $Submit.Add_Click({ CheckUser })
 
@@ -925,12 +934,13 @@ function ConnectToDBFunc {
         $User = $UserLogin.Text
         $PWord = ConvertTo-SecureString -String $Passw.Text -AsPlainText -Force
         $Credential = New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList $User, $PWord 
-        $Session = New-PSSession -ConfigurationName Microsoft.Exchange -ConnectionUri $Uri.Text -ErrorAction SilentlyContinue -Authentication Kerberos -Credential $Credential
-        Import-PSSession $Session -DisableNameChecking
+        $exchSession = New-PSSession -ConfigurationName Microsoft.Exchange -ConnectionUri $Uri.Text -ErrorAction SilentlyContinue -Authentication Kerberos -Credential $Credential
+        Import-PSSession $exchSession -DisableNameChecking
         [System.Windows.MessageBox]::Show("Вам удалось авторизоваться в exchange","Поздравляем","OK","Information")
         $pass = $true
         $StartForm.Controls.Remove($ConnectToDBBtn)
         $StartForm.Controls.Add($AddToDBBtn)
+        $StartForm.Controls.Add($DisconnectFromDBBtn)
       } catch {
         [System.Windows.MessageBox]::Show("Вы не смогли авторизоваться в Exchange.","Ошибка","OK","Error")
       }
@@ -982,13 +992,13 @@ function ConnectToDBFunc {
     $Uri.Font = 'Microsoft Sans Serif,10'
 
     $Submit = New-Object system.Windows.Forms.Button
-    $Submit.BackColor         = "#a4ba67"
+    $Submit.BackColor         = "#DCDCDC"
     $Submit.text              = "Подключиться к MS Exchange"
     $Submit.width             = 300
     $Submit.height            = 30
     $Submit.location          = New-Object System.Drawing.Point(10,220)
     $Submit.Font              = 'Microsoft Sans Serif,10'
-    $Submit.ForeColor         = "#ffffff"
+    $Submit.ForeColor         = "#000000"
 
     $Submit.Add_Click({ CheckUser })
 
@@ -1034,19 +1044,35 @@ function AddToDBFunc {
     $UserLogin.Font = 'Microsoft Sans Serif,10'
 
     $Submit = New-Object system.Windows.Forms.Button
-    $Submit.BackColor         = "#a4ba67"
+    $Submit.BackColor         = "#DCDCDC"
     $Submit.text              = "Добавить пользователя в БД"
     $Submit.width             = 300
     $Submit.height            = 30
     $Submit.location          = New-Object System.Drawing.Point(10,80)
     $Submit.Font              = 'Microsoft Sans Serif,10'
-    $Submit.ForeColor         = "#ffffff"
+    $Submit.ForeColor         = "#000000"
 
     $Submit.Add_Click({ CheckUser })
 
     $CurrForm.Controls.AddRange(@($LabelL,$UserLogin,$Submit))
 
     [void]$CurrForm.ShowDialog()
+}
+function DisconnectFromDBFunc {
+$exchSession = (Get-PSSession |where -property ConfigurationName -eq 'Microsoft.Exchange' | select -expand id)
+if ($exchSession) {
+    if([System.Windows.MessageBox]::Show('Точно?', 'Уверены?', 'YesNo','Question') -eq 'Yes'){
+        try {Remove-PSSession $exchSession
+            $pass = $false
+            [System.Windows.MessageBox]::Show("Вы отключены от Exchange","Готово","OK","Information")
+            $StartForm.Controls.Add($ConnectToDBBtn)
+            $StartForm.Controls.Remove($AddToDBBtn)
+            $StartForm.Controls.Remove($DisconnectFromDBBtn)}
+        catch {[System.Windows.MessageBox]::Show("Произошла неизвестная ошибка","Ошибка","OK","Error")} }
+        }
+        else {
+        [System.Windows.MessageBox]::Show("Немогу найти id. Перезапустите Powershell","Ошибка","OK","Error")
+        }
 }
 
 
@@ -1061,25 +1087,29 @@ $GetUserInfoBtn.Add_Click({GetUserInfoFunc})
 $GetGroupInfoBtn.Add_Click({GetGroupInfoFunc})
 $CreateUserBtn.Add_Click({CreateUserFunc})
 $ConnectToDBBtn.Add_Click({ConnectToDBFunc})
+$DisconnectFromDBBtn.Add_Click({DisconnectFromDBFunc})
 $AddToDBBtn.Add_Click({AddToDBFunc})
 
 $StartForm.Controls.AddRange(@($BlockUserBtn,$UnbanUserBtn,$ShowMailBoxBtn,$HideMailBoxBtn,$ChangePasswBtn,$AddToGroupBtn,$RemoveFromGroupBtn,$GetUserInfoBtn,$GetGroupInfoBtn,$CreateUserBtn))
 
 
-
 if ("Microsoft.Exchange" -in [string[]](Get-PSSession | Select-Object -expand ConfigurationName)) {
   $pass = $true
+  $exchSession = (Get-PSSession |where -property ConfigurationName -eq 'Microsoft.Exchange' | select -expand id)
   } else {
+  $exchSession = $null
   $pass = $false
 }
 if ($pass -eq $false) {
 $StartForm.Controls.Add($ConnectToDBBtn)
 $StartForm.Controls.Remove($AddToDBBtn)
+$StartForm.Controls.Remove($DisconnectFromDBBtn)
 
 }
 if ($pass -eq $true) {
 $StartForm.Controls.Remove($ConnectToDBBtn)
 $StartForm.Controls.Add($AddToDBBtn)
+$StartForm.Controls.Add($DisconnectFromDBBtn)
 }
 
 

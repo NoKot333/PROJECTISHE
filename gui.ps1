@@ -271,7 +271,7 @@ function HideMailBoxFunc {
         if ($null -ne $userInfo ) {
             if([System.Windows.MessageBox]::Show('Точно?', 'Уверены?', 'YesNo','Question') -eq 'Yes'){
                 Set-ADUser -Identity $UserLogin.Text -replace @{msExchHideFromAddressLists=$true}
-                [System.Windows.MessageBox]::Show("Ящик показан в адресной книге","Готово","OK","Information")
+                [System.Windows.MessageBox]::Show("Ящик скрыт в адресной книге","Готово","OK","Information")
                 } else {
                 [System.Windows.MessageBox]::Show("Произошла отмена","Отмена","OK","Information")
       }} else {
@@ -731,9 +731,9 @@ function CreateUserFunc {
             Set-ADuser -Identity $userName -Add @{extensionAttribute2 = $extAttr1["Фамилия"]}
             Set-ADuser -Identity $userName -Add @{extensionAttribute3 = $extAttr1["Отчество"]}
             Set-ADuser -Identity $userName -Add @{extensionAttribute4 = $extAttr1["Город"]}
-            Set-ADuser -Identity $userName -Add @{extensionAttribute4 = $extAttr1["Компания"]}
-            Set-ADuser -Identity $userName -Add @{extensionAttribute5 = $extAttr1["Должность"]}
-            Set-ADuser -Identity $userName -Add @{extensionAttribute6 = $extAttr1["Отдел"]}
+            Set-ADuser -Identity $userName -Add @{extensionAttribute5 = $extAttr1["Компания"]}
+            Set-ADuser -Identity $userName -Add @{extensionAttribute6 = $extAttr1["Должность"]}
+            Set-ADuser -Identity $userName -Add @{extensionAttribute7 = $extAttr1["Отдел"]}
             [System.Windows.MessageBox]::Show("Создание завершено успешно")
             } catch {
             [System.Windows.MessageBox]::Show("Неизвестная ошибка")
